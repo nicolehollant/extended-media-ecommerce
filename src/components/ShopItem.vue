@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       item: null,
-      publicPath: process.env.BASE_URL
+      publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
     }
   },
   methods: {

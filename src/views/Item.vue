@@ -91,7 +91,7 @@ export default {
   data() {
     return {
       imgIndex: 0,
-      publicPath: process.env.BASE_URL
+      publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
     }
   },
   methods: {
