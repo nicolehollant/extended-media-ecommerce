@@ -27,7 +27,8 @@ export default {
   },
   methods: {
     getPaths(paths) {
-      return paths.map(e => `/images/${e}`)
+      // return paths.map(e => `/images/${e}`)
+      return paths
     }
   },
 }
