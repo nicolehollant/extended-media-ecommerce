@@ -4,10 +4,10 @@
 
     <div class="active-item">
       <video controls class="image" v-if="isVideo(currentItem.paths[imgIndex])">
-        <source :src="currentItem.paths[imgIndex]">
+        <source :src="'/extended-media-ecommerce/' + currentItem.paths[imgIndex]">
         This video isnt supported
       </video>
-      <img :src="currentItem.paths[imgIndex]" class="image" v-else>
+      <img :src="'/extended-media-ecommerce/' + currentItem.paths[imgIndex]" class="image" v-else>
     </div>
     <div class="active-controls">
       <button class="active-control-button" @click="previous">&larr;</button>
@@ -21,13 +21,13 @@
         :class="{'pl-0 pr-2': index === 0, 'pl-2 pr-0': index === currentItem.paths.length - 1 }"
       >
         <video 
-          :src="currentItem.paths[index]" 
+          :src="'/extended-media-ecommerce/' + currentItem.paths[index]" 
           @click="imgIndex = index"
           class="other-image"
           v-if="isVideo(currentItem.paths[index])"
         >This video isnt supported</video>
         <img 
-          :src="currentItem.paths[index]" 
+          :src="'/extended-media-ecommerce/' + currentItem.paths[index]" 
           @click="imgIndex = index"
           class="other-image"
           v-else
