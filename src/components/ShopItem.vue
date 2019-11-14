@@ -1,7 +1,7 @@
 <template>
 <div class="item" @click="viewItem">
   <div class="image">
-    <img :src="paths[0]">
+    <img :src="publicPath + paths[0]">
     <!-- <p class="description">{{ description }}</p> -->
     <div class="description">
       <p class="text-3xl">{{ name }}</p>
@@ -39,7 +39,8 @@ export default {
   },
   data() {
     return {
-      item: null
+      item: null,
+      publicPath: process.env.BASE_URL
     }
   },
   methods: {

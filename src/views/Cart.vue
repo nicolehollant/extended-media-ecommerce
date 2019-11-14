@@ -5,7 +5,7 @@
     <div class="table-wrapper">
       <table>
         <tr v-for="(item, index) in $store.getters.cart" :key="`item-${item.name}-${index}`">
-          <td><img :src="item.paths[0]" class="preview"></td>
+          <td><img :src="publicPath + item.paths[0]" class="preview"></td>
           <td><p class="name">{{ item.name }}</p></td>
           <td><p class="date">{{ item.date }}</p></td>
           <button class="remove" @click="() => remove(item)">&times;</button>
@@ -22,6 +22,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      publicPath: process.env.BASE_URL
+    }
+  },
   methods: {
     remove(item) {
       this.$store.commit('removeItem', {item: item})
