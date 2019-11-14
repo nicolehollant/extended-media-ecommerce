@@ -37,7 +37,7 @@ export default {
 <style scoped lang="postcss">
 .shop {
   --item-width: 400px;
-  --num-columns: 1;
+  --num-columns: 2;
   --grid-gap: 0.25rem;
   padding: 1rem;
   @apply mt-4;
@@ -53,21 +53,11 @@ export default {
 .grid-item {
   @apply flex-center;
 }
+
+
 @media (min-width: 600px) {
 .shop {
-  --num-columns: 2;
-}
-.grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-}
-
-@media (min-width: 920px) {
-.shop {
   --num-columns: 3;
-}
-.grid {
-  grid-template-columns: repeat(3, 1fr);
 }
 }
 </style>

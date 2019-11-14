@@ -70,7 +70,7 @@ export default {
 }
 img {
   width: 400px;
-  height: 500px;
+  height: 200px;
   object-fit: cover;
   @apply rounded ease;
 }
@@ -94,5 +94,18 @@ h1 {
 }
 .date {
   @apply font-medium;
+}
+
+
+@media (min-width: 600px) {
+img {
+  height: 300px;
+}
+}
+
+@media (min-width: 920px) {
+img {
+  height: 500px;
+}
 }
 </style>
