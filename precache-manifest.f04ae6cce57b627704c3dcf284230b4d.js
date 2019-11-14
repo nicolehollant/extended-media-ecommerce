@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "30b004b14fbab39fb74c",
+    "revision": "f89315613dcbb4abca96",
     "url": "/extended-media-ecommerce/css/app.a56fac8c.css"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/extended-media-ecommerce/css/chunk-809dd30e.96f39fcb.css"
   },
   {
-    "revision": "134e65710510bd478090",
+    "revision": "6820c6d62b630b5991f4",
     "url": "/extended-media-ecommerce/css/chunk-a76097aa.f27e7ada.css"
   },
   {
@@ -560,12 +560,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/extended-media-ecommerce/img/starFilled.57d2a224.svg"
   },
   {
-    "revision": "3b30ea6fdd8bc7c72f6d6bb55e27012c",
+    "revision": "494571d44441fba6941494464aca9802",
     "url": "/extended-media-ecommerce/index.html"
   },
   {
-    "revision": "30b004b14fbab39fb74c",
-    "url": "/extended-media-ecommerce/js/app.138e3913.js"
+    "revision": "f89315613dcbb4abca96",
+    "url": "/extended-media-ecommerce/js/app.78638539.js"
   },
   {
     "revision": "001e382bb5d1a8f512e0",
@@ -580,8 +580,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/extended-media-ecommerce/js/chunk-809dd30e.abc31156.js"
   },
   {
-    "revision": "134e65710510bd478090",
-    "url": "/extended-media-ecommerce/js/chunk-a76097aa.aff342f6.js"
+    "revision": "6820c6d62b630b5991f4",
+    "url": "/extended-media-ecommerce/js/chunk-a76097aa.7b327f71.js"
   },
   {
     "revision": "c232cdc45863edd80f6c",
