@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: '/extended-media-ecommerce/'
+  publicPath: '/extended-media-ecommerce/',
+  assetsDir: ''
   // process.env.NODE_ENV === 'production'
   //   ? '/extended-media-ecommerce/'
   //   : '/'
