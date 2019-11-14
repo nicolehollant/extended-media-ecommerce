@@ -45,7 +45,8 @@ export default {
 .grid {
   max-width: calc(var(--num-columns) * var(--item-width) + ((var(--num-columns) - 1) * var(--grid-gap)));
   display: grid;
-  grid-template-columns: repeat(var(--num-columns), 1fr);
+  /* grid-template-columns: repeat(var(--num-columns), 1fr); */
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: var(--grid-gap);
   @apply my-4 mx-auto;
 }
@@ -56,11 +57,17 @@ export default {
 .shop {
   --num-columns: 2;
 }
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+}
 }
 
 @media (min-width: 920px) {
 .shop {
   --num-columns: 3;
+}
+.grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 }
 </style>
