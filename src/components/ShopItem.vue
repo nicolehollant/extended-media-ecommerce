@@ -1,7 +1,7 @@
 <template>
 <div class="item" @click="viewItem">
   <div class="image">
-    <img :src="'/extended-media-ecommerce/' + paths[0]">
+    <img :src="paths[0]">
     <!-- <p class="description">{{ description }}</p> -->
     <div class="description">
       <p class="text-3xl">{{ name }}</p>
