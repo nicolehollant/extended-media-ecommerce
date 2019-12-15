@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Aly's Wedding",
       "description": "Last Fall, my step sister Aly got married! It was over in Newport at Fort Adams, which was beautiful, but she was super busy and we hardly saw her. We had some good fun in the fort though.",
       "date": "Fall 2018",
@@ -51,6 +52,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Baby Me",
       "description": "Found some old pictures of myself around. Just a couple of the classics, me with a toy gun, me on a swing, a before and after of me when this kid paul sat next to me at my kindergarten boat competition (I was so proud of my boat, but I didn't want to sit with paul)",
       "date": "My early years",
@@ -81,6 +83,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Bonnie",
       "description": "Bonnie is my mother! Just wanted to grab a couple memories of her. We've got the timeless mercury video, the mcdonalds sequence, her sock man for Kevin, and her last Halloween costume",
       "date": "Past couple years",
@@ -110,6 +113,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Chelsea",
       "description": "In sophomore year, I had the chance to meet Chelsea Manning with a group of students before she gave a bigger talk to the campus. She's really amazing and brilliant, and getting to sit around and talk neural networks / tensorflow with one of my personal heroes was one of the most incredible experiences.",
       "date": "Spring 2018",
@@ -135,6 +139,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Alpha Brains",
       "description": "Summer going into my junior year I had an internship at Cigna, and I met some of my closest friends there! Everyone was on my team (well, Hanna was peripherally), and we pretty quickly got to be close out of the office. Being around them (Andi not pictured :( ) is always super refreshing, and seeing them is one of my favorite parts of going home.",
       "date": "Summer 2018 and on",
@@ -177,6 +182,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "family",
       "description": "Just some miscellanious family pictures, or some of us all together :)",
       "date": "98 and on",
@@ -203,6 +209,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Queer Coffeehouse",
       "description": "These are my near and dear Bard friends. We all met in L&T, and got a suite together in sophomore year. I love them all very dearly",
       "date": "Fall 2016 and on",
@@ -238,6 +245,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Garlic Fest",
       "description": "Last year, Mary, Thea, and I all went to garlic fest together! It was really fun, but I only brought 10 dollars in cash and couldn't try too much of the goods, but it was a great day to be out with my pals",
       "date": "Fall 2018",
@@ -272,6 +280,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Leor",
       "description": "One day last spring, Leor asked if I could be part of a photoshoot for her. Of course you say yes to these things, and we ended up wading through the Tivoli Bays fresh into spring (the water was quite cold). I never actually saw the pictures that she got out of it, but I had this funky aluminum cloak for it",
       "date": "Spring 2019",
@@ -294,6 +303,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Mary's Plants",
       "description": "Mary got these plants and a little growth apparatus for our home in\nsophomore year, it was super cute and I loved it. Only basil really grew, and\ncurly parsley consistently dissapointed us.",
       "date": "Feb 19, 2018",
@@ -320,6 +330,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Cancun's Night",
       "description": "Nothing too special, just a night at cancuns with my pals",
       "date": "Spring 2019",
@@ -342,6 +353,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Trip to the MET",
       "description": "We took a trip down to the city for our Roman Art and Architecture class, which is where I met Anna and Isabel! It was fun, a wonderful time, Lucius Verus is a cutie",
       "date": "Spring 2018",
@@ -363,6 +375,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Microwave Computer",
       "description": "Hunter and I built a computer in a microwave! It was good fun, we enlisted\nmy buddy to do some metal work—he cut the hole for the IO shield—and we payed\nhim by letting him keep all the innards. Perhaps he's on a government watch list\nnow, but you never know!",
       "date": "Feb 2, 2018",
@@ -391,6 +404,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Dad",
       "description": "My dad's family came here from Haiti when he was a little kid. He was spiffy then, he's spiffy now. He's always kept our home full of art, and always feel loved when I'm there",
       "date": "way back then",
@@ -413,6 +427,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Sawyer",
       "description": "Sawyer is my lil guy (brother). He's the most wonderful ball of joy you've ever seen. He used to have a brace for his scoliosis before he had surgery, and he would have us hit it and tell us he couldn't feel a thing. The kid is a trooper, and I love him like hell. There's a picture of him in a dress and a big hat from his baptism lookin adorable. There's one where he asked me to put lipstick on him, and Dean is sitting there on edge worried that he'd be involved... Some of my favorites are the baby pic of him in the dirt, the one of him hanging at camp",
       "date": "December 2010",
@@ -453,6 +468,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Podcast",
       "description": "Back in highschool, me and my buddies thought it'd be fun to make a podcast doing hip hop album reviews (naturally). We were doing them on a weekly basis, and it was some of the most fun that I've ever had. There was one episode where a few of our friends came by, and our friend Kay spilled water on my interface and broke it, so after we got set back up for the next week we thought it would be fun to make a diss track. Sean, as per his nature, veered off to talk about someone at Jos. A Bank that made fun of his socks and sandals.",
       "date": "2015 through 2016",
@@ -488,6 +504,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "West Covina",
       "description": "Last Spring, Brooke and I made a last minute call to hop down to the city and see the Crazy Ex Girlfriend Live Show, which was incredible! The cast is all so sweet (love u rachel bloom), and spending time with Brooke is always great too. We met up with her old friend Michael over at NYU for some lunch and tea, and ended up getting stranded overnight in Penn Station",
       "date": "Spring 2019",
@@ -530,6 +547,7 @@
       ]
     },
     {
+      "owner_id": "ObjectId('5df59655a7ee77fc76d24d50')",
       "name": "Youngster Mary",
       "description": "Mary came home one day with this fit, looking like Youngster Joey from Pokemon. That's all I have to say...",
       "date": "Oct 10, 2017",
