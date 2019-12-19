@@ -7,16 +7,32 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
-    Navbar,
+    Navbar
   },
+  computed: {
+    ...mapGetters([
+      'user',
+    ])
+  },
+  mounted() {
+    if(Object.keys(this.user).length === 0) {
+      let cookie = this.$cookies.get('extended-media-user') || {}
+      this.$store.commit('setUser', { user: cookie })
+      if(Object.keys(cookie).length === 0) this.$router.push("onboarding")
+    }
+  }
 }
 </script>
 
 <style lang='postcss'>
 @import url("https://use.typekit.net/vxw4tlv.css");
-
+html {
+  @apply bg-gray-100
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   /* font-family: futura-pt, Helvetica, Arial, sans-serif; */

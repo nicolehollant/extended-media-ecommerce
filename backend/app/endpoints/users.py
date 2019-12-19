@@ -136,3 +136,27 @@ def delete_user():
     return bad_delete_response()
 
   return success_response()
+
+@routes.route('/users/login/', methods=["POST"])
+def get_user():
+  """
+  log in! (get info for user)
+  """
+  reqbody = request.get_json()
+  all_present, present, empty_fields = require_fields(reqbody, ["email", "password"])
+  
+  if not all_present:
+    return empty_fields_response(empty_fields)
+
+  if not client.check_exists({"email": present["email"]}, "users"):
+    return bad_criteria_response("User does not already exist")
+  user = client.find_one({"email": present["email"]}, "users")
+  if user["password"] != present["password"]:
+    return bad_criteria_response("Password does not match email")
+
+  user.pop("_id")
+
+  return jsonify({
+    "message": "Success!",
+    "data": user
+  }), 200

@@ -2,15 +2,16 @@
   <div class="navbar">
     <div class="nav-content">
       <div class="logo"><img src="@/assets/logo.svg"></div>
-      <div class="nav">
+      <!-- <div class="nav"> -->
         <div class="navbar--links">
           <router-link class="navbar--links__link" v-for="link in links" :key="link.name" :to="link.to">
             {{ link.name }}
           </router-link>
         </div>
-      </div>
+      <!-- </div> -->
 
-      <button class="account"><img src="@/assets/accountTransparent.svg"></button>
+      <!-- <button class="account"><img src="@/assets/accountTransparent.svg"></button> -->
+      <button class="account" @click="() => navigate('account')"><img :src="publicPath + avatar" ></button>
       <button class="hamburger" @click="navUp = !navUp"><img class="block" src="@/assets/hamburger.svg">
         <div class="mobile-nav" v-if="navUp">
           <li class="mobile-nav--link" v-for="link in links" :key="link.name" @click="() => navigate(link.to)">
@@ -29,16 +30,25 @@ const link = (name, to) => {
     to: to
   }
 }
+import { mapGetters } from 'vuex'
+import { publicPath } from '@/conf'
 
 export default {
+  computed: {
+    ...mapGetters([
+      'avatar'
+    ])
+  },
   data() {
     return {
       links: [
-        link("Shop", "/"),
+        link("Shop", "/shop"),
         link("Cart", "/cart"),
         link("About", "/about"),
       ],
-      navUp: false
+      navUp: false,
+      publicPath: publicPath, //process.env.BASE_URL
+      // publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
     }
   },
   methods: {
@@ -63,10 +73,11 @@ export default {
   max-width: 1200px;
   margin: auto;
   position: relative;
+  @apply flex items-center;
 }
 .navbar--links {
-  max-width: 500px;
-  @apply hidden justify-around mx-auto;
+  max-width: 450px;
+  @apply hidden w-full justify-around mx-auto pl-12;
 }
 .navbar--links__link {
   @apply text-teal-600 font-semibold ease relative;
@@ -88,18 +99,26 @@ export default {
   @apply text-teal-900;
 }
 .logo {
-  left: 2rem;
   @apply absolute top-0 bottom-0 flex items-center;
 }
 .account {
   right: 2rem;
-  @apply hidden w-8 absolute top-0 bottom-0
+  @apply w-12 flex items-center bg-green-100 border-2 border-black rounded-full ml-auto mr-4 ease;
+}
+.account:hover {
+  @apply bg-green-900 shadow-lg
 }
 .account:focus {
   outline: none;
 }
+.account:hover img {
+  transform: rotate(-15deg)
+}
+.account img {
+  @apply rounded-full ease-slow
+}
 .hamburger {
-  @apply relative w-6 top-0 bottom-0 right-0 flex items-center ml-auto
+  @apply relative w-6 top-0 bottom-0 right-0 flex items-center
 }
 .hamburger:focus {
   outline: none;
@@ -118,11 +137,14 @@ export default {
   @apply text-teal-800 underline
 }
 @media (min-width: 850px) {
+.logo {
+  left: 2rem;
+}
 .navbar--links {
   @apply flex;
 }
 .account {
-  @apply flex;
+  @apply flex ml-0;
 }
 .hamburger {
   @apply hidden;

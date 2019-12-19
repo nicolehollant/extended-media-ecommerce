@@ -1,12 +1,20 @@
 module.exports = {
   theme: {
-    zIndex: ["page", "nav", "dropdown", "modal"].reduce((obj, level, index) => {
+    zIndex: ["page", "nav", "dropdown", "modal", "onboarding"].reduce((obj, level, index) => {
       obj[`${level}-behind`] = (10 * index) - 1;
       obj[`${level}`] = 10 * index;
       obj[`${level}-front`] = (10 * index) + 1;
       return obj
     }, {}),
     extend: {
+      width: {
+        "min": "min-content",
+        "max": "max-content",
+      },
+      height: {
+        "min": "min-content",
+        "max": "max-content",
+      },
       borderRadius: {
         "xl": "0.75rem",
         "2xl": "1rem",

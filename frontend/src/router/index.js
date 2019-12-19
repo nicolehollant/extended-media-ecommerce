@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/onboarding'
+  },
+  {
+    path: '/shop',
     name: 'shop',
     component: () => import('../views/Shop.vue')
   },
@@ -23,7 +27,22 @@ const routes = [
     path: '/item',
     name: 'item',
     component: () => import('../views/Item.vue')
-  }
+  },
+  {
+    path: '/onboarding',
+    name: 'onboarding',
+    component: () => import('../views/Onboarding.vue')
+  },
+  {
+    path: '/account',
+    name: 'account',
+    component: () => import('../views/Account.vue')
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: () => import('../views/Orders.vue')
+  },
 ]
 
 const router = new VueRouter({

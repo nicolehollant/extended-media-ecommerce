@@ -5,27 +5,30 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    item: { 
-      name: "Microwave Computer", 
-      description: "Hunter and I built a computer in a microwave! It was good fun, we enlisted my buddy to do some metal work—he cut the hole for the IO shield—and we payed him by letting him keep all the innards. Perhaps he's on a government watch list now, but you never know!", 
-      date: "Feb 2, 2018", 
-      paths: [ "/images/microwave1.JPG", "/images/microwave2.JPG", "/images/microwave3.JPG" ] 
-    },
-    cart: []
+    item: {},
+    cart: [],
+    user: {}
   },
   getters: {
-    currentItem: state => {
-      return state.item
+    currentItem: state => state.item,
+    cart: state => state.cart,
+    user: state => state.user,
+    avatar: state => {
+      let avatarNum = state.user.avatar || 0
+      return `/avatars/avatar${avatarNum  + 1}.png`
     },
-    cart: state => {
-      return state.cart
-    }
   },
   mutations: {
+    setUser (state, payload) {
+      state.user = payload.user
+      Vue.$cookies.set('extended-media-user', JSON.stringify(payload.user))
+    },
     setItem (state, payload) {
       state.item = payload.item
+      Vue.$cookies.set('extended-media-item', payload.item.name)
     },
     addItem (state, payload) {
+      if(state.cart.find(e => e.name === payload.item.name)) return
       state.cart.push(payload.item)
     },
     removeItem (state, payload) {

@@ -1,0 +1,47 @@
+# pls do this so u stop using all our storage
+# https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169
+# docker-compose -f docker-compose.yml -f optional-service.yaml up
+version: '3'
+
+services:
+  # Frontend Service
+  extended-media-vue: # name of service
+    build: frontend # dir of dockerfile
+    restart: unless-stopped
+    tty: true
+    ports:
+    - "8089:80" # map ports
+    networks:
+    - extended-media-app-network
+
+  extended-media-api:
+    container_name: extended-media-api
+    restart: unless-stopped
+    env_file:
+    - backend/.env
+    environment:
+      MONGO_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    build: backend
+    ports:
+    - "3009:5000"
+    networks:
+    - extended-media-app-network
+
+  # Nginx Service
+  extended-media-webserver:
+    image: nginx:alpine
+    container_name: extended-media-webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+    # - "80:80" # for the server
+    - "89:80" # for me locally
+    - "449:443"
+    networks:
+    - extended-media-app-network
+  
+# Networks
+networks:
+  extended-media-app-network:
+    driver: bridge

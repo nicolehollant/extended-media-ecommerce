@@ -8,11 +8,26 @@ Make the last project a bit more interactive
 	- comment / review?
 	- create account
 
+Maybe little background animations??
+
 Make a bunch of avatars for the users!!
 
 LOL please salt passwords
 - https://www.geeksforgeeks.org/store-password-database/
 
+
+## TODO:
+
+- [X] hook up items properly 
+  - [X] make accounts for all the fake users
+  - [X] add all of items.json to mongo
+  - [X] load items from mongo instead!
+- [X] add a review process
+  - [X] make sure it works lol
+- [ ] add a cart process
+  - [ ] make sure it works lol
+
+- [ ] practice book binding
 
 
 ====================================================================

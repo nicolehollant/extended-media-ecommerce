@@ -12,7 +12,14 @@
         </tr>
       </table>
     </div>
-    <button class="submit">Checkout</button>
+    <button class="submit" @click="submit">Checkout</button>
+  </div>
+  <div v-else-if="success">
+    <h3 class="text-2xl text-green-700 my-2 font-semibold">Success!</h3>
+    <p class="text-lg font-medium text-green-900">Your order should be here shortly</p>
+  </div>
+  <div v-else-if="error !== ''">
+    <h3 class="text-xl font-medium">We couldn't complete this request at the moment...</h3>
   </div>
   <div v-else>
     <h3 class="text-xl font-medium">Sorry, cart is empty right now!</h3>
@@ -21,15 +28,51 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { mapGetters } from 'vuex'
+
+import { publicPath, backendurl } from '@/conf'
+
 export default {
   data() {
     return {
-      publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
+      error: '',
+      success: false,
+      publicPath: publicPath, //process.env.BASE_URL
+      // publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
     }
+  },
+  computed: {
+    ...mapGetters([ 
+      'cart',
+      'user'
+    ]),
   },
   methods: {
     remove(item) {
       this.$store.commit('removeItem', {item: item})
+    },
+    submit() {
+      const items = this.cart.map(e => e.name);
+      const data = {
+        items: items,
+        password: this.user.password,
+        email: this.user.email,
+      }
+      axios.post(backendurl + '/orders/', data).then(response => { 
+        console.log(response); 
+        if(response.status === 201) {
+          this.error = ''
+          this.success = true
+          for(const item of this.cart.slice()) {
+            this.$store.commit('removeItem', {item: item})
+          }
+        }
+      })
+      .catch(error => { 
+        this.error = error;
+        console.log(error); 
+      });
     }
   },
 }

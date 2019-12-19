@@ -1,19 +1,29 @@
 <template>
-<div class="item" @click="viewItem">
+<div class="item" @click="viewItem" v-if="item !== null && !error">
   <div class="image">
     <img :src="publicPath + paths[0]">
-    <!-- <p class="description">{{ description }}</p> -->
     <div class="description">
       <p class="text-3xl">{{ name }}</p>
       <p class="text-xl">{{ date }}</p>
     </div>
   </div>
-  <!-- <h1>{{ name }}</h1> -->
-  <!-- <p class="date">{{ date }}</p> -->
+</div>
+
+<div class="loading" v-else-if="item === null && !error">
+  <div class="loading__copy">We're takin a look 🤠</div>
+  <div class="loading__spinner" />
+</div>
+
+<div class="grid" v-else-if="error">
+  There was an error loading our items 😢
 </div>
 </template>
 
 <script>
+import axios from 'axios';
+
+import { publicPath, backendurl } from '@/conf'
+
 export default {
   props: {
     name: {
@@ -34,29 +44,42 @@ export default {
     },
     reviews: {
       type: null,
-      default: {user: "john", rating: 3, comment: "lorem ipsum"}
+      default: () => {return [{user: "john", rating: 3, comment: "lorem ipsum"}]}
     }
   },
   data() {
     return {
       item: null,
-      publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
+      error: false,
+      publicPath: publicPath, //process.env.BASE_URL
+      // publicPath: "/extended-media-ecommerce", //process.env.BASE_URL
     }
   },
   methods: {
     viewItem() {
       this.$store.commit('setItem', { item: this.item })
       this.$router.push('/item')
+    },
+    loadItem() {
+      console.log(this.name, this.$cookies.get('extended-media-item'), "")
+      const name = this.name || this.$cookies.get('extended-media-item') || ""
+      axios.get(backendurl + '/items/' + name).then(response => { 
+        console.log(response); 
+        if(response.status === 200) {
+          const data = response.data.data;
+          console.log(data)
+          this.error = false
+          this.item = data
+        }
+      })
+      .catch(error => { 
+        this.error = true
+        console.log(error.response); 
+      })
     }
   },
   mounted () {
-    this.item = {
-      name: this.name,
-      description: this.description,
-      date: this.date,
-      paths: this.paths,
-      reviews: this.reviews
-    };
+    this.loadItem()
   },
 }
 </script>
@@ -65,8 +88,6 @@ export default {
 .item {
   width: fit-content;
   @apply shadow rounded-2xl bg-gray-100 text-gray-700 flex-col-center;
-  /* max-width: 500px;
-  @apply w-full p-4 shadow rounded-2xl bg-gray-100 text-gray-700 flex-col-center; */
 }
 img {
   width: 400px;
@@ -96,6 +117,21 @@ h1 {
   @apply font-medium;
 }
 
+.loading__copy {
+  @apply text-xl font-medium text-green-800 mt-10;
+}
+
+.loading__spinner {
+  @apply rounded-full w-24 h-24 border-green-700 border-t-4 my-8 mx-auto;
+  border-width: 1rem;
+  border-top: 1rem solid #81e6d9;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 @media (min-width: 600px) {
 img {

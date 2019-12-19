@@ -4,15 +4,22 @@ import datetime
 
 num_avatars = 5
 
-@routes.route('/orders/', methods=["GET"])
+@routes.route('/orders/all/', methods=["POST"])
 def get_orders():
   """
   returns all documents in order collection
   """
+  reqbody = request.get_json()
+  all_present, present, empty_fields = require_fields(reqbody, ["username", "password"])
+  if not all_present:
+    return empty_fields_response(empty_fields)
+  if present["username"] != admin_username or present["password"] != admin_password:
+    return bad_criteria_response("Invalid admin creds")
 
   res = list(map(lambda x: {
       "order": x["order"],
       "email": x["email"],
+      "items": x["items"],
     }, 
     client.find_all("orders")))
   return jsonify({
